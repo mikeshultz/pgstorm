@@ -125,12 +125,12 @@ def main():
     parser = argparse.ArgumentParser(description='PostgreSQL load testing.')
     parser.add_argument('connection_string', default=25, type=str, metavar='DSN',
                         help='pg connection string (default: postgresql://localhost:5432/postgres)')
+    parser.add_argument('sql', metavar="FILE", type=argparse.FileType('r'), nargs="?",
+                        default=sys.stdin, help='sql file to run(or stdin)')
     parser.add_argument('-t', '--threads', metavar='N', type=int, 
                         help='amount of threads to start')
     #parser.add_argument('-c', '--connections', default=25, type=int,
     #                    help='threads per connection')
-    parser.add_argument('-s', '--sql', type=argparse.FileType('r'), 
-                        default=sys.stdin, help='sql file to run(or stdin)')
     parser.add_argument('-d', '--delay', type=float, default=0.05, 
                         help='thread health check delay in seconds(default: 0.05)')
     parser.add_argument('-l', '--log-level', type=str, default='WARNING',
