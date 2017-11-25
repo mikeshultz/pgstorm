@@ -2,6 +2,10 @@
 
 PostgreSQL load testing tool with real world tests.
 
+## Install
+
+    git clone https://github.com/mikeshultz/pgstorm.git && cd pgstorm && python setup.py install
+
 ## Usage
 
     usage: pgstorm [-h] [-t N] [-d DELAY] [-l LEVEL] [-y TYPE] [-v VALUE]
