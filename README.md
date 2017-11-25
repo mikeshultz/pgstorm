@@ -4,19 +4,19 @@ PostgreSQL load testing tool with real world tests.
 
 ## Usage
 
-    usage: pgstorm [-h] [-t N] [-s SQL] [-d DELAY] [-l LEVEL] [-y TYPE] [-v VALUE]
-                   DSN
+    usage: pgstorm [-h] [-t N] [-d DELAY] [-l LEVEL] [-y TYPE] [-v VALUE]
+                   DSN [FILE]
 
     PostgreSQL load testing.
 
     positional arguments:
       DSN                   pg connection string (default:
                             postgresql://localhost:5432/postgres)
+      FILE                  sql file to run(or stdin)
 
     optional arguments:
       -h, --help            show this help message and exit
       -t N, --threads N     amount of threads to start
-      -s SQL, --sql SQL     sql file to run(or stdin)
       -d DELAY, --delay DELAY
                             thread health check delay in seconds(default: 0.05)
       -l LEVEL, --log-level LEVEL
