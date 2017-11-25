@@ -30,13 +30,19 @@ PostgreSQL load testing tool with real world tests.
 
 ### Run SQL File
 
+Run an SQL file, with perhaps dozens of taxing queries.
+
     pgstorm -t 5 postgresql://localhost:5432/mydb mytest.sql
 
 ### Require Any Results
 
+Make sure that any results are returned at all(at least one row):
+
     echo "SELECT TRUE FROM \"user\" WHERE usename = 'mike';" | pgstorm -y M postgresql://localhost:5432/mydb 
 
 ### Require Row Count
+
+If you want to make sure a query always returns 3 rows:
 
     pgstorm -y N -v 3 postgresql://localhost:5432/mydb return_three_rows.sql
 
